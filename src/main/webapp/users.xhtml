@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+
+    <script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="fortune.css"/>
+    <title>Search users</title>
+</h:head>
+
+<h:body>
+    <div class="container">
+    <h1>Search users</h1>
+
+        <h:dataTable id="searchResults" styleClass="table table-striped"
+        value="#{userRepository.findAll()}" var="user">
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="UserId"/>
+            </f:facet>
+            <h:outputText value="#{user.id}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="First name"/>
+            </f:facet>
+            <h:outputText value="#{user.firstName}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Last name"/>
+            </f:facet>
+            <h:outputText value="#{user.lastName}"/>
+        </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="BirthDate"/>
+                </f:facet>
+                <h:outputText value="#{user.birthDate}"/>
+            </h:column>
+    </h:dataTable>
+        <a href="create.faces">Add new artist</a>
+    </div>
+</h:body>
+</html>
