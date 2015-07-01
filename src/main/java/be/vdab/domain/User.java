@@ -17,10 +17,12 @@ public class User {
 
     private String birthDate;
 
+    private String gender;
+
     /**
      * Used by JPA.
      */
-    protected User() {
+    public User() {
     }
 
     public User(String firstName, String lastName, String birthDate) {
@@ -60,4 +62,13 @@ public class User {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
 }
