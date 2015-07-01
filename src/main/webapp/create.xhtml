@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+
+    <script type="application/javascript"
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="fortune.css"/>
+
+    <title>Users</title>
+</h:head>
+
+<h:body>
+    <div class="container">
+        <h1>Add new artist</h1>
+
+        <h:form>
+            <h:outputText value="Firstname "/>
+            <h:inputText value="#{userBean.user.firstName}"/>
+            <br/>
+            <h:outputText value="Lastname "/>
+            <h:inputText value="#{userBean.user.lastName}"/>
+            <br/>
+            <h:outputText value="Date of birth "/>
+            <h:inputText value="#{userBean.user.birthDate}"/>
+            <br/>
+            <h:selectOneRadio value="#{userBean.user.gender}">
+                <f:selectItem itemLabel=" Male " itemValue="male"/>
+                <f:selectItem itemLabel=" Female " itemValue="female"/>
+            </h:selectOneRadio>
+
+            <div>
+                <h:commandButton action="#{userBean.save()}" value="Save artist" class="btn btn-success"/>
+            </div>
+        </h:form>
+
+    </div>
+</h:body>
+</html>
