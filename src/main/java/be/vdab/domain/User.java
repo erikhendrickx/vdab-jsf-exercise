@@ -71,4 +71,9 @@ public class User {
         this.gender = gender;
     }
 
+
+    public String fullName() {
+        return firstName + " " + lastName;
+    }
+
 }

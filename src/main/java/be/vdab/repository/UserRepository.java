@@ -3,7 +3,6 @@ package be.vdab.repository;
 import be.vdab.domain.User;
 
 import javax.inject.Named;
-import javax.jws.soap.SOAPBinding;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -19,7 +18,11 @@ public class UserRepository {
         return entityManager.createQuery("select u from User u", User.class).getResultList();
     }
 
-    public User findbyId(int id){
+    public User findById(int id) {
         return entityManager.find(User.class, id);
     }
+
+    public void save(User user) {
+        entityManager.merge(user);
+}
 }
